@@ -84,12 +84,18 @@ public class PaysageJavaFX extends Application {
         colonneVertebrale.setTranslateX(-100);
         colonneVertebrale.setTranslateY(130);
 
+        // Lac
+        Ellipse lac = new Ellipse(100, 50);
+        lac.setFill(Color.BLUE);
+        lac.setTranslateX(200);
+        lac.setTranslateY(200);
+
         // Ajouter tous les éléments à la scène
-        root.getChildren().addAll(ciel, sol, montagne1, montagne2, soleil, corps, tete, jambe1, jambe2, jambe3, jambe4, bosse, colonneVertebrale);
+        root.getChildren().addAll(ciel, sol, montagne1, montagne2, soleil, corps, tete, jambe1, jambe2, jambe3, jambe4, bosse, colonneVertebrale, lac);
 
         Scene scene = new Scene(root, 800, 600);
 
-        primaryStage.setTitle("Paysage JavaFX avec Dromadaire");
+        primaryStage.setTitle("Paysage JavaFX avec Dromadaire et Lac");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
