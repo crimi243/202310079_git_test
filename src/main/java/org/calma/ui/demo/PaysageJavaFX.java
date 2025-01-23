@@ -5,9 +5,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Polygon;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class PaysageJavaFX extends Application {
@@ -25,71 +24,71 @@ public class PaysageJavaFX extends Application {
         sol.setFill(Color.GREEN);
         sol.setTranslateY(250);
 
-        // Montagnes
-        Polygon montagne1 = new Polygon();
-        montagne1.getPoints().addAll(200.0, 250.0, 400.0, 100.0, 600.0, 250.0);
-        montagne1.setFill(Color.GRAY);
-
-        Polygon montagne2 = new Polygon();
-        montagne2.getPoints().addAll(100.0, 250.0, 350.0, 150.0, 600.0, 250.0);
-        montagne2.setFill(Color.DARKGRAY);
-
         // Soleil
         Circle soleil = new Circle(50, Color.YELLOW);
         soleil.setTranslateX(300);
         soleil.setTranslateY(-150);
 
         // Dromadaire (corps)
-        Ellipse corps = new Ellipse(70, 40);
-        corps.setFill(Color.BROWN);
-        corps.setTranslateY(170);
-        corps.setTranslateX(-100);
+        Ellipse corpsDromadaire = new Ellipse(70, 40);
+        corpsDromadaire.setFill(Color.BROWN);
+        corpsDromadaire.setTranslateY(170);
+        corpsDromadaire.setTranslateX(-100);
 
-        // Dromadaire (tête)
-        Circle tete = new Circle(20);
-        tete.setFill(Color.BROWN);
-        tete.setTranslateY(140);
-        tete.setTranslateX(-120);
+        Circle teteDromadaire = new Circle(20, Color.BROWN);
+        teteDromadaire.setTranslateY(140);
+        teteDromadaire.setTranslateX(-120);
 
-        // Dromadaire (jambes)
-        Rectangle jambe1 = new Rectangle(10, 50);
-        jambe1.setFill(Color.BROWN);
-        jambe1.setTranslateX(-80);
-        jambe1.setTranslateY(220);
+        // Ajout du lion
+        // Corps du lion
+        Ellipse corpsLion = new Ellipse(60, 35);
+        corpsLion.setFill(Color.GOLDENROD);
+        corpsLion.setTranslateY(180);
+        corpsLion.setTranslateX(100);
 
-        Rectangle jambe2 = new Rectangle(10, 50);
-        jambe2.setFill(Color.BROWN);
-        jambe2.setTranslateX(-50);
-        jambe2.setTranslateY(220);
+        // Tête du lion
+        Circle teteLion = new Circle(30, Color.GOLDENROD);
+        teteLion.setTranslateY(160);
+        teteLion.setTranslateX(150);
 
-        Rectangle jambe3 = new Rectangle(10, 50);
-        jambe3.setFill(Color.BROWN);
-        jambe3.setTranslateX(-120);
-        jambe3.setTranslateY(220);
+        // Crinière du lion
+        Circle criniere = new Circle(40, Color.ORANGE);
+        criniere.setTranslateY(160);
+        criniere.setTranslateX(150);
 
-        Rectangle jambe4 = new Rectangle(10, 50);
-        jambe4.setFill(Color.BROWN);
-        jambe4.setTranslateX(-90);
-        jambe4.setTranslateY(220);
+        // Pattes du lion
+        Rectangle patte1 = new Rectangle(10, 40, Color.GOLDENROD);
+        patte1.setTranslateX(85);
+        patte1.setTranslateY(210);
 
-        // Dromadaire (bosse)
-        Ellipse bosse = new Ellipse(30, 15);
-        bosse.setFill(Color.SADDLEBROWN);
-        bosse.setTranslateY(130);
-        bosse.setTranslateX(-70);
+        Rectangle patte2 = new Rectangle(10, 40, Color.GOLDENROD);
+        patte2.setTranslateX(115);
+        patte2.setTranslateY(210);
 
-        // Dromadaire (colonne vertébrale)
-        Rectangle colonneVertebrale = new Rectangle(10, 40);
-        colonneVertebrale.setFill(Color.BROWN);
-        colonneVertebrale.setTranslateX(-100);
-        colonneVertebrale.setTranslateY(130);
+        Rectangle patte3 = new Rectangle(10, 40, Color.GOLDENROD);
+        patte3.setTranslateX(125);
+        patte3.setTranslateY(210);
+
+        Rectangle patte4 = new Rectangle(10, 40, Color.GOLDENROD);
+        patte4.setTranslateX(155);
+        patte4.setTranslateY(210);
+
+        // Queue du lion
+        Rectangle queue = new Rectangle(50, 5, Color.GOLDENROD);
+        queue.setTranslateX(60);
+        queue.setTranslateY(180);
+        queue.setRotate(-30);
+
+        Circle boutQueue = new Circle(10, Color.ORANGE);
+        boutQueue.setTranslateX(30);
+        boutQueue.setTranslateY(165);
 
         // Ajouter tous les éléments à la scène
-        root.getChildren().addAll(ciel, sol, montagne1, montagne2, soleil, corps, tete, jambe1, jambe2, jambe3, jambe4, bosse, colonneVertebrale);
+        root.getChildren().addAll(ciel, sol, soleil, corpsDromadaire, teteDromadaire, corpsLion, criniere, teteLion, patte1, patte2, patte3, patte4, queue, boutQueue);
 
         Scene scene = new Scene(root, 800, 600);
 
-        primaryStage.setTitle("Paysage JavaFX avec Dromadaire");
+        primaryStage.setTitle("Paysage JavaFX avec Dromadaire et Lion");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
