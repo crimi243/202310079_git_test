@@ -7,6 +7,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Ellipse;
 import javafx.stage.Stage;
 
 public class PaysageJavaFX extends Application {
@@ -38,12 +39,57 @@ public class PaysageJavaFX extends Application {
         soleil.setTranslateX(300);
         soleil.setTranslateY(-150);
 
+        // Dromadaire (corps)
+        Ellipse corps = new Ellipse(70, 40);
+        corps.setFill(Color.BROWN);
+        corps.setTranslateY(170);
+        corps.setTranslateX(-100);
+
+        // Dromadaire (tête)
+        Circle tete = new Circle(20);
+        tete.setFill(Color.BROWN);
+        tete.setTranslateY(140);
+        tete.setTranslateX(-120);
+
+        // Dromadaire (jambes)
+        Rectangle jambe1 = new Rectangle(10, 50);
+        jambe1.setFill(Color.BROWN);
+        jambe1.setTranslateX(-80);
+        jambe1.setTranslateY(220);
+
+        Rectangle jambe2 = new Rectangle(10, 50);
+        jambe2.setFill(Color.BROWN);
+        jambe2.setTranslateX(-50);
+        jambe2.setTranslateY(220);
+
+        Rectangle jambe3 = new Rectangle(10, 50);
+        jambe3.setFill(Color.BROWN);
+        jambe3.setTranslateX(-120);
+        jambe3.setTranslateY(220);
+
+        Rectangle jambe4 = new Rectangle(10, 50);
+        jambe4.setFill(Color.BROWN);
+        jambe4.setTranslateX(-90);
+        jambe4.setTranslateY(220);
+
+        // Dromadaire (bosse)
+        Ellipse bosse = new Ellipse(30, 15);
+        bosse.setFill(Color.SADDLEBROWN);
+        bosse.setTranslateY(130);
+        bosse.setTranslateX(-70);
+
+        // Dromadaire (colonne vertébrale)
+        Rectangle colonneVertebrale = new Rectangle(10, 40);
+        colonneVertebrale.setFill(Color.BROWN);
+        colonneVertebrale.setTranslateX(-100);
+        colonneVertebrale.setTranslateY(130);
+
         // Ajouter tous les éléments à la scène
-        root.getChildren().addAll(ciel, sol, montagne1, montagne2, soleil);
+        root.getChildren().addAll(ciel, sol, montagne1, montagne2, soleil, corps, tete, jambe1, jambe2, jambe3, jambe4, bosse, colonneVertebrale);
 
         Scene scene = new Scene(root, 800, 600);
 
-        primaryStage.setTitle("Paysage JavaFX");
+        primaryStage.setTitle("Paysage JavaFX avec Dromadaire");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
